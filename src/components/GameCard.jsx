@@ -28,7 +28,16 @@ export default function GameCard({ title, releaseDate, summary, rating }) {
         </p>
       </div>
 
+<<<<<<< Updated upstream
       <div className="rating-badge"> {cleanRating} </div>
+=======
+      <div className="rating-badge">
+        {isNaN(Number(rating))
+          ? "NA"
+          : Math.min(99, Math.floor(Number(rating)))}
+        {/* {rating} */}
+      </div>
+>>>>>>> Stashed changes
     </div>
   );
 }

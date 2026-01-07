@@ -21,14 +21,43 @@ export default function Filters() {
         {/* Order By */}
         <div className="filter-group">
           <label>Order By</label>
+<<<<<<< Updated upstream
 
           <div className="order-by">
+=======
+          {/* <div className="order-by">
+>>>>>>> Stashed changes
             <div className="sort-icon">↑</div>
 
             <select>
               <option>Release Date</option>
               <option>Score</option>
               <option>Name</option>
+            </select>
+          </div> */}
+          <div className="order-by">
+            <button
+              type="button"
+              className="sort-icon"
+              onClick={() =>
+                onChange({
+                  ...filters,
+                  orderDir: filters.orderDir === "asc" ? "desc" : "asc",
+                })
+              }
+            >
+              {filters.orderDir === "asc" ? "↑" : "↓"}
+            </button>
+
+            <select
+              value={filters.orderBy}
+              onChange={(e) =>
+                onChange({ ...filters, orderBy: e.target.value })
+              }
+            >
+              <option value="firstReleaseDate">Release Date</option>
+              <option value="rating">Score</option>
+              <option value="name">Name</option>
             </select>
           </div>
         </div>
