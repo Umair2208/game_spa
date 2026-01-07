@@ -1,6 +1,6 @@
 import "../assets/css/filter.css";
 
-export default function Filters() {
+export default function Filters({ filters, onChange, onClear }) {
   return (
     <div className="filter-card">
       <h3 className="filter-title">Filter Results</h3>
@@ -8,33 +8,30 @@ export default function Filters() {
       {/* Name filter */}
       <div className="filter-group">
         <label>Name (contains)</label>
-        <input type="text" placeholder="Text string" />
+        <input
+          type="text"
+          placeholder="Text string"
+          value={filters.name}
+          onChange={(e) => onChange({ ...filters, name: e.target.value })}
+        />
       </div>
 
       <div className="filter-wrap">
         {/* Minimum score */}
         <div className="filter-group">
           <label>Minimum Score</label>
-          <input type="text" placeholder="1 - 10" />
+          <input
+            type="number"
+            placeholder="1 - 100"
+            value={filters.minScore}
+            onChange={(e) => onChange({ ...filters, minScore: e.target.value })}
+          />
         </div>
 
         {/* Order By */}
         <div className="filter-group">
           <label>Order By</label>
-<<<<<<< Updated upstream
 
-          <div className="order-by">
-=======
-          {/* <div className="order-by">
->>>>>>> Stashed changes
-            <div className="sort-icon">↑</div>
-
-            <select>
-              <option>Release Date</option>
-              <option>Score</option>
-              <option>Name</option>
-            </select>
-          </div> */}
           <div className="order-by">
             <button
               type="button"
@@ -64,7 +61,9 @@ export default function Filters() {
 
         {/* Clear button */}
         <div className="filter-actions">
-          <button className="clear-btn">Clear</button>
+          <button className="clear-btn" onClick={onClear}>
+            Clear
+          </button>
         </div>
       </div>
     </div>

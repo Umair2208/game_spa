@@ -3,19 +3,29 @@ import "../assets/css/gameCard.css";
 
 export default function GameCard({ title, releaseDate, summary, rating }) {
   const [expanded, setExpanded] = useState(false);
-  const cleanRating = Math.min(99, Math.floor(Number(rating)));
-  const formattedDate = new Date(Number(releaseDate)).toLocaleDateString(
-    "en-GB"
-  );
+
+  const formattedDate = releaseDate
+    ? new Date(releaseDate).toLocaleDateString("en-GB")
+    : "N/A";
+
   const MAX_LENGTH = 300;
-  const isLong = summary && summary.length > MAX_LENGTH;
+  const safeSummary = summary || "No description available.";
+  const isLong = safeSummary.length > MAX_LENGTH;
 
   const displayedText =
-    expanded || !isLong ? summary : summary.slice(0, MAX_LENGTH) + "...";
+    expanded || !isLong
+      ? safeSummary
+      : safeSummary.slice(0, MAX_LENGTH) + "...";
+
+  const cleanRating = isNaN(Number(rating))
+    ? "NA"
+    : Math.min(99, Math.floor(Number(rating)));
+
   return (
     <div className="game-card">
       <div className="game-card-content">
         <h4 className="game-title">{title}</h4>
+
         <p className="release-date">Release Date: {formattedDate}</p>
 
         <p className="game-summary">
@@ -28,16 +38,7 @@ export default function GameCard({ title, releaseDate, summary, rating }) {
         </p>
       </div>
 
-<<<<<<< Updated upstream
-      <div className="rating-badge"> {cleanRating} </div>
-=======
-      <div className="rating-badge">
-        {isNaN(Number(rating))
-          ? "NA"
-          : Math.min(99, Math.floor(Number(rating)))}
-        {/* {rating} */}
-      </div>
->>>>>>> Stashed changes
+      <div className="rating-badge">{cleanRating}</div>
     </div>
   );
 }

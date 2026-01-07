@@ -1,14 +1,14 @@
 export function applyClientFilters(games, filters) {
   let result = [...games];
 
-  /* ---------- NAME FILTER ---------- */
+  // Name filter
   if (filters.name) {
     result = result.filter((g) =>
       g.attributes.name.toLowerCase().includes(filters.name.toLowerCase())
     );
   }
 
-  /* ---------- MINIMUM SCORE (FIXED) ---------- */
+  // Minimum score
   if (filters.minScore !== "") {
     const min = Number(filters.minScore);
 
@@ -18,15 +18,15 @@ export function applyClientFilters(games, filters) {
     });
   }
 
-  /* ---------- SORTING (FIXED) ---------- */
+  // Sorting
   const dir = filters.orderDir === "asc" ? 1 : -1;
 
   result.sort((a, b) => {
     if (filters.orderBy === "name") {
       return (
-        a.attributes.name
+        (b.attributes.name || "")
           .toLowerCase()
-          .localeCompare(b.attributes.name.toLowerCase()) * dir
+          .localeCompare((a.attributes.name || "").toLowerCase()) * dir
       );
     }
 

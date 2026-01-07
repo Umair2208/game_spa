@@ -1,9 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 
-/**
- * @param {Function} fetchFn - API function (page, pageSize) => Promise
- * @param {number} pageSize
- */
 export default function useInfinitePagination(fetchFn, pageSize = 10) {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
@@ -11,32 +7,35 @@ export default function useInfinitePagination(fetchFn, pageSize = 10) {
   const [loading, setLoading] = useState(false);
 
   const observerRef = useRef(null);
+  const isFetchingRef = useRef(false);
 
-  // Fetch data when page changes
+  // Fetch data
   useEffect(() => {
     loadData();
   }, [page]);
 
   async function loadData() {
-    if (loading) return;
+    if (isFetchingRef.current) return;
     if (pageCount !== null && page > pageCount) return;
 
+    isFetchingRef.current = true;
     setLoading(true);
 
     const res = await fetchFn(page, pageSize);
 
     setData((prev) => {
-      const map = new Map(prev.map((item) => [item.id, item]));
-      res.games.forEach((item) => map.set(item.id, item));
+      const map = new Map(prev.map((i) => [i.id, i]));
+      res.games.forEach((i) => map.set(i.id, i));
       return Array.from(map.values());
     });
 
     setPageCount(res.pagination.pageCount);
 
     setLoading(false);
+    isFetchingRef.current = false;
   }
 
-  // Intersection Observer logic
+  // Infinite scroll observer
   useEffect(() => {
     if (!observerRef.current) return;
 
@@ -44,19 +43,18 @@ export default function useInfinitePagination(fetchFn, pageSize = 10) {
       (entries) => {
         if (
           entries[0].isIntersecting &&
-          !loading &&
+          !isFetchingRef.current &&
           (pageCount === null || page < pageCount)
         ) {
-          setPage((prev) => prev + 1);
+          setPage((p) => p + 1);
         }
       },
       { threshold: 1 }
     );
 
     observer.observe(observerRef.current);
-
     return () => observer.disconnect();
-  }, [loading, page, pageCount]);
+  }, [page, pageCount]);
 
   return {
     data,
