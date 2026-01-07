@@ -1,16 +1,125 @@
-# React + Vite
+🎮 Games SPA (Single Page Application)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive Games Single Page Application built with React, featuring infinite scroll pagination, client-side filtering & sorting, and a pixel-perfect UI based on provided designs.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Infinite scroll pagination
 
-## React Compiler
+Debounced search & filters
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Client-side sorting (Name, Score, Release Date)
 
-## Expanding the ESLint configuration
+Minimum score filtering
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Responsive UI (Desktop / Tablet / Mobile)
+
+Expandable game summaries
+
+Contact form with validation
+
+Clean, modular architecture
+
+🛠️ Tech Stack
+
+React (JS)
+
+React Router DOM
+
+Axios
+
+React Hook Form
+
+Bootstrap 5
+
+Custom Hooks
+
+Intersection Observer API
+
+🧠 Custom Hooks
+useInfinitePagination
+
+Handles:
+
+Page tracking
+
+API fetching
+
+Duplicate prevention
+
+IntersectionObserver logic
+
+useDebounce
+
+Used to delay filter application while typing, preventing excessive renders and filtering operations.
+
+📝 Game Card Behavior
+
+Ratings are sanitized:
+
+No decimals
+
+Max two digits
+
+Release dates are formatted (DD/MM/YYYY)
+
+Summaries:
+
+Desktop: 300 characters
+
+Mobile (<768px): 150 characters
+
+Expandable with “Read more / Read less”
+
+📬 Contact Form
+
+Built using react-hook-form
+
+Includes:
+
+Required field validation
+
+Email pattern validation
+
+Minimum message length
+
+Responsive layout
+
+Styled to match provided design
+
+📱 Responsive Design
+
+Desktop-first layout
+
+Tablet and mobile breakpoints handled using:
+
+Bootstrap grid
+
+Custom media queries
+
+Content behavior adapts (e.g., summary length on mobile)
+
+▶️ Getting Started
+1. Install dependencies
+npm install
+
+2. Run the app
+npm run dev
+
+🧾 Notes for Reviewers
+
+The hybrid filtering strategy was chosen intentionally to handle API limitations.
+
+The solution prioritizes UX stability and real-world robustness.
+
+Code is modular, readable, and easy to extend.
+
+👤 Author
+
+Built with focus on:
+
+Clean architecture
+
+Practical trade-offs
+
+Production-ready patterns
