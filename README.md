@@ -20,6 +20,7 @@ Contact form with validation
 
 Clean, modular architecture
 
+
 ### 🛠️ Tech Stack
 
 React (JS)
@@ -35,6 +36,7 @@ Bootstrap 5
 Custom Hooks
 
 Intersection Observer API
+
 
 ### 🧠 Custom Hooks
 useInfinitePagination
@@ -52,6 +54,7 @@ IntersectionObserver logic
 useDebounce
 
 Used to delay filter application while typing, preventing excessive renders and filtering operations.
+
 
 ### 📝 Game Card Behavior
 
@@ -71,6 +74,7 @@ Mobile (<768px): 150 characters
 
 Expandable with “Read more / Read less”
 
+
 ### 📬 Contact Form
 
 Built using react-hook-form
@@ -87,6 +91,7 @@ Responsive layout
 
 Styled to match provided design
 
+
 ### 📱 Responsive Design
 
 Desktop-first layout
@@ -99,12 +104,14 @@ Custom media queries
 
 Content behavior adapts (e.g., summary length on mobile)
 
+
 ### ▶️ Getting Started
 1. Install dependencies
 npm install
 
 2. Run the app
 npm run dev
+
 
 ### 🧾 Notes for Reviewers
 
@@ -113,6 +120,7 @@ The hybrid filtering strategy was chosen intentionally to handle API limitations
 The solution prioritizes UX stability and real-world robustness.
 
 Code is modular, readable, and easy to extend.
+
 
 ### 👤 Author
 
