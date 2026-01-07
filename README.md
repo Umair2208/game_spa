@@ -1,8 +1,8 @@
-🎮 Games SPA (Single Page Application)
+# 🎮 Games SPA (Single Page Application)
 
 A responsive Games Single Page Application built with React, featuring infinite scroll pagination, client-side filtering & sorting, and a pixel-perfect UI based on provided designs.
 
-🚀 Features
+### 🚀 Features
 
 Infinite scroll pagination
 
@@ -20,7 +20,7 @@ Contact form with validation
 
 Clean, modular architecture
 
-🛠️ Tech Stack
+### 🛠️ Tech Stack
 
 React (JS)
 
@@ -36,7 +36,7 @@ Custom Hooks
 
 Intersection Observer API
 
-🧠 Custom Hooks
+### 🧠 Custom Hooks
 useInfinitePagination
 
 Handles:
@@ -53,7 +53,7 @@ useDebounce
 
 Used to delay filter application while typing, preventing excessive renders and filtering operations.
 
-📝 Game Card Behavior
+### 📝 Game Card Behavior
 
 Ratings are sanitized:
 
@@ -71,7 +71,7 @@ Mobile (<768px): 150 characters
 
 Expandable with “Read more / Read less”
 
-📬 Contact Form
+### 📬 Contact Form
 
 Built using react-hook-form
 
@@ -87,7 +87,7 @@ Responsive layout
 
 Styled to match provided design
 
-📱 Responsive Design
+### 📱 Responsive Design
 
 Desktop-first layout
 
@@ -99,14 +99,14 @@ Custom media queries
 
 Content behavior adapts (e.g., summary length on mobile)
 
-▶️ Getting Started
+### ▶️ Getting Started
 1. Install dependencies
 npm install
 
 2. Run the app
 npm run dev
 
-🧾 Notes for Reviewers
+### 🧾 Notes for Reviewers
 
 The hybrid filtering strategy was chosen intentionally to handle API limitations.
 
@@ -114,7 +114,7 @@ The solution prioritizes UX stability and real-world robustness.
 
 Code is modular, readable, and easy to extend.
 
-👤 Author
+### 👤 Author
 
 Built with focus on:
 
