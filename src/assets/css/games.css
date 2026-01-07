@@ -1,0 +1,10 @@
+.games-wrapper {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 45px;
+}
+
+.game-card-wrapper {
+  height: calc(100vh - 215px);
+  overflow: scroll;
+}
