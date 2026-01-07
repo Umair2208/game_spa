@@ -8,3 +8,22 @@
   height: calc(100vh - 215px);
   overflow: scroll;
 }
+
+@media (max-width: 1200px) {
+  .games-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .game-card-wrapper {
+    height: calc(100vh - 415px);
+    overflow: scroll;
+  }
+}
+@media (max-width: 768px) {
+  .game-card-wrapper {
+    height: calc(100vh - 460px);
+    overflow: scroll;
+  }
+}

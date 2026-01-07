@@ -50,7 +50,7 @@
 
 @media (max-width: 1199px) {
   .app-header {
-    height: 150px;
+    height: 130px;
   }
 
   .header-nav {
@@ -62,5 +62,24 @@
   .header-watermark {
     font-size: 35px;
     left: -25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    height: 110px;
+  }
+
+  .header-nav .nav-link {
+    font-size: 18px;
+  }
+
+  .header-nav {
+    padding-left: 26px;
+  }
+
+  .header-watermark {
+    font-size: 30px;
+    left: -22px;
   }
 }

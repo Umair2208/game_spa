@@ -128,5 +128,34 @@
 @media (max-width: 767px) {
   .filter-card {
     max-width: 100%;
+    padding: 12px;
+  }
+
+  .filter-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .filter-group label {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .filter-group input {
+    height: 33px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .order-by select {
+    height: 33px;
+    font-size: 12px;
+    padding: 0 8px;
+  }
+
+  .sort-icon {
+    width: 33px;
+    height: 33px;
+    font-size: 14px;
   }
 }
