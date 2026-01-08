@@ -6,8 +6,9 @@ export default function Filters({ filters, onChange, onClear }) {
       <h3 className="filter-title">Filter Results</h3>
 
       <div className="filter-group">
-        <label>Name (contains)</label>
+        <label htmlFor="name">Name (contains)</label>
         <input
+          id="name"
           type="text"
           placeholder="Text string"
           value={filters.name}
@@ -17,17 +18,43 @@ export default function Filters({ filters, onChange, onClear }) {
 
       <div className="filter-wrap">
         <div className="filter-group">
-          <label>Minimum Score</label>
+          <label htmlFor="score">Minimum Score</label>
           <input
+            id="score"
             type="number"
             placeholder="1 - 100"
             value={filters.minScore}
-            onChange={(e) => onChange({ ...filters, minScore: e.target.value })}
+            min={0}
+            max={100}
+            step={1}
+            onKeyDown={(e) => {
+              if (e.key === "-" || e.key === "." || e.key === "e") {
+                e.preventDefault();
+              }
+            }}
+            onChange={(e) => {
+              const value = e.target.value;
+
+              // Allow empty (for clearing)
+              if (value === "") {
+                onChange({ ...filters, minScore: "" });
+                return;
+              }
+
+              const num = Number(value);
+
+              if (!Number.isInteger(num) || num < 0) return;
+
+              onChange({
+                ...filters,
+                minScore: Math.min(num, 100),
+              });
+            }}
           />
         </div>
 
         <div className="filter-group">
-          <label>Order By</label>
+          <label htmlFor="orderBy">Order By</label>
 
           <div className="order-by">
             <button
@@ -44,6 +71,7 @@ export default function Filters({ filters, onChange, onClear }) {
             </button>
 
             <select
+              id="orderBy"
               value={filters.orderBy}
               onChange={(e) =>
                 onChange({ ...filters, orderBy: e.target.value })

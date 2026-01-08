@@ -50,8 +50,11 @@
   color: #5692e8;
   cursor: pointer;
   font-weight: 500;
-  margin-left: 4px;
+  margin-left: 0px;
   word-break: keep-all;
+  background: transparent;
+  border: 0px;
+  padding: 1px;
 }
 
 .read-more:hover {

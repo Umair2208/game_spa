@@ -32,10 +32,11 @@ export default function Contact() {
           <div className="form-wrap">
             <div className="form-row">
               <div className="form-group">
-                <label>
+                <label htmlFor="name">
                   Name <span>*</span>
                 </label>
                 <input
+                  id="name"
                   type="text"
                   {...register("name", {
                     required: "Name is required",
@@ -47,10 +48,11 @@ export default function Contact() {
               </div>
 
               <div className="form-group">
-                <label>
+                <label htmlFor="email">
                   Email Address <span>*</span>
                 </label>
                 <input
+                  id="email"
                   type="email"
                   {...register("email", {
                     required: "Email is required",
@@ -67,10 +69,11 @@ export default function Contact() {
             </div>
 
             <div className="form-group full">
-              <label>
+              <label htmlFor="message">
                 Message <span>*</span>
               </label>
               <textarea
+                id="message"
                 rows="4"
                 {...register("message", {
                   required: "Message is required",

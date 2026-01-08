@@ -40,9 +40,12 @@ export default function GameCard({ title, releaseDate, summary, rating }) {
         <p className="game-summary">
           {displayedText}
           {isLong && (
-            <span className="read-more" onClick={() => setExpanded(!expanded)}>
+            <button
+              className="read-more"
+              onClick={() => setExpanded(!expanded)}
+            >
               {expanded ? " Read less" : " Read more"}
-            </span>
+            </button>
           )}
         </p>
       </div>

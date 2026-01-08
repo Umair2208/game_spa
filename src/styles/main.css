@@ -2,7 +2,8 @@ body {
   width: 100%;
   height: 100vh;
   margin: 0;
-  font-family: "Mulish", sans-serif !important;
+  font-family: "Mulish", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Arial, sans-serif !important;
   background: var(--bg-gradient);
   background-position: center;
   background-repeat: no-repeat;
@@ -18,6 +19,7 @@ h5,
 h6,
 .header-nav .nav-link,
 button {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Arial, sans-serif;
   font-weight: 500;
 }
