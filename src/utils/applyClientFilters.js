@@ -1,14 +1,12 @@
 export function applyClientFilters(games, filters) {
   let result = [...games];
 
-  // Name filter
   if (filters.name) {
     result = result.filter((g) =>
       g.attributes.name.toLowerCase().includes(filters.name.toLowerCase())
     );
   }
 
-  // Minimum score
   if (filters.minScore !== "") {
     const min = Number(filters.minScore);
 
@@ -18,7 +16,6 @@ export function applyClientFilters(games, filters) {
     });
   }
 
-  // Sorting
   const dir = filters.orderDir === "asc" ? 1 : -1;
 
   result.sort((a, b) => {

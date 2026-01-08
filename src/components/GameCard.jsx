@@ -7,7 +7,6 @@ export default function GameCard({ title, releaseDate, summary, rating }) {
     window.innerWidth < 768 ? 150 : 300
   );
 
-  // 🔹 Update max length on resize
   useEffect(() => {
     const handleResize = () => {
       setMaxLength(window.innerWidth < 768 ? 150 : 300);

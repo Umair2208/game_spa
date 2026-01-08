@@ -5,7 +5,6 @@ export default function Filters({ filters, onChange, onClear }) {
     <div className="filter-card">
       <h3 className="filter-title">Filter Results</h3>
 
-      {/* Name filter */}
       <div className="filter-group">
         <label>Name (contains)</label>
         <input
@@ -17,7 +16,6 @@ export default function Filters({ filters, onChange, onClear }) {
       </div>
 
       <div className="filter-wrap">
-        {/* Minimum score */}
         <div className="filter-group">
           <label>Minimum Score</label>
           <input
@@ -28,7 +26,6 @@ export default function Filters({ filters, onChange, onClear }) {
           />
         </div>
 
-        {/* Order By */}
         <div className="filter-group">
           <label>Order By</label>
 
@@ -59,7 +56,6 @@ export default function Filters({ filters, onChange, onClear }) {
           </div>
         </div>
 
-        {/* Clear button */}
         <div className="filter-actions">
           <button className="clear-btn" onClick={onClear}>
             Clear

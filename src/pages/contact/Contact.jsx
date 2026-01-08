@@ -16,7 +16,6 @@ export default function Contact() {
 
   return (
     <div className="contact-wrapper">
-      {/* Header */}
       <div className="contact-header">
         <h2>GET IN TOUCH</h2>
         <p>
@@ -26,14 +25,12 @@ export default function Contact() {
         </p>
       </div>
 
-      {/* Form Card */}
       <div className="contact-card">
         <h3>Contact Form</h3>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-wrap">
             <div className="form-row">
-              {/* Name */}
               <div className="form-group">
                 <label>
                   Name <span>*</span>
@@ -49,7 +46,6 @@ export default function Contact() {
                 )}
               </div>
 
-              {/* Email */}
               <div className="form-group">
                 <label>
                   Email Address <span>*</span>
@@ -70,7 +66,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Message */}
             <div className="form-group full">
               <label>
                 Message <span>*</span>
@@ -91,7 +86,6 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Submit */}
           <div className="form-actions">
             <button type="submit" className="send-btn">
               Send

@@ -2,7 +2,7 @@ body {
   width: 100%;
   height: 100vh;
   margin: 0;
-  font-family: "Mulish", sans-serif;
+  font-family: "Mulish", sans-serif !important;
   background: var(--bg-gradient);
   background-position: center;
   background-repeat: no-repeat;
@@ -10,7 +10,6 @@ body {
   overflow: hidden;
 }
 
-/* Headings, header, buttons */
 h1,
 h2,
 h3,

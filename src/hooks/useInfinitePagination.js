@@ -9,7 +9,6 @@ export default function useInfinitePagination(fetchFn, pageSize = 10) {
   const observerRef = useRef(null);
   const isFetchingRef = useRef(false);
 
-  // Fetch data
   useEffect(() => {
     loadData();
   }, [page]);
@@ -35,7 +34,6 @@ export default function useInfinitePagination(fetchFn, pageSize = 10) {
     isFetchingRef.current = false;
   }
 
-  // Infinite scroll observer
   useEffect(() => {
     if (!observerRef.current) return;
 

@@ -7,7 +7,6 @@
   --accent-blue: #5692e8;
 }
 
-/* Montserrat – Headings / Nav */
 @font-face {
   font-family: "Montserrat";
   src: url("../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
@@ -16,7 +15,6 @@
   font-style: normal;
 }
 
-/* Mulish – Body text */
 @font-face {
   font-family: "Mulish";
   src: url("../assets/fonts/Mulish/Mulish-Medium.ttf") format("truetype");
